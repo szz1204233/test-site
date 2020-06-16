@@ -1,7 +1,7 @@
 <!--
  * @FilePath     : \test-site\src\pages\member\Index.vue
  * @Date         : 2020-05-31 20:43:03
- * @LastEditTime : 2020-06-16 20:20:20
+ * @LastEditTime : 2020-06-16 20:51:12
  * @Description  : 成员详情页面，包括所有成员的信息、简介及任务分工等
 -->
 <template>
@@ -17,7 +17,7 @@
       </ul>
     </nav>
     <b-table :data="data" :columns="columns"></b-table>
-    <div v-for="(post, index) in $page.members.edges" :key="index">
+    <!-- <div v-for="(post, index) in $page.members.edges" :key="index">
       <article class="media">
         <figure class="media-left">
           <p class="image is-64x64">
@@ -37,11 +37,6 @@
           </div>
 
           <article class="media">
-            <!-- <figure class="media-left">
-              <p class="image is-48x48">
-                <img src="https://bulma.io/images/placeholders/96x96.png" />
-              </p>
-            </figure>-->
             <div class="media-content">
               <div class="content">
                 <p>
@@ -97,7 +92,7 @@
           </article>
         </div>
       </article>
-    </div>
+    </div>-->
   </Layout>
 </template>
 
@@ -121,20 +116,20 @@ query {
 export default {
   //created钩子用来在一个实例被创建之后执行代码
   created() {
-    var queryData = []
-    var edges = this.$page.members.edges
-    for(var index in edges) {
+    var queryData = [];
+    var edges = this.$page.members.edges;
+    for (var index in edges) {
       queryData[index] = {
         studentID: edges[index].node.studentID,
         name: edges[index].node.name,
         gender: edges[index].node.gender,
         grade: edges[index].node.grade,
         project: edges[index].node.project
-      }
+      };
     }
     //在创建data后更改data内容
-    this.data = queryData
-    console.log(this.$page.members.edges)
+    this.data = queryData;
+    console.log(this.$page.members.edges);
   },
   data() {
     return {
