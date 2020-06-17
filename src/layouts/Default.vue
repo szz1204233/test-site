@@ -5,7 +5,7 @@
       <nav class="level">
         <!-- Left side -->
         <div class="level-left">
-            
+
     <!--
       <section>
       <b-sidebar
@@ -21,13 +21,13 @@
           <b-menu-list  label="班级信息展示">
             <b-menu-item  label="关于班级网站"  href="/class-info/"></b-menu-item>
              <b-menu-item  label="班级语雀文档" href="https://www.yuque.com/groups/openxy/join?token=cfV5vv0O6pKOR0fE"></b-menu-item >
-            <b-menu-item label="班级团队信息" href="/group-info"> 
+            <b-menu-item label="班级团队信息" href="/group-info">
               <b-menu-item label="创新实践1"></b-menu-item>
               <b-menu-item label="创新实践2"></b-menu-item>
               <b-menu-item label="创新实践3"></b-menu-item>
               <b-menu-item label="创新实践4"></b-menu-item>
             </b-menu-item>
-       
+
             <b-menu-item label="班级成员信息" href="/member/">
               <b-menu-item label="创新实践1"></b-menu-item>
               <b-menu-item label="创新实践2"></b-menu-item>
@@ -50,7 +50,7 @@
         <div class="level-right">
           <img src="https://iknow-pic.cdn.bcebos.com/eaf81a4c510fd9f9ce4c4514352dd42a2834a477">
         <b-navbar>
-          
+
         <template slot="start">
            <section class="rightSerach">
         <b-field  >
@@ -82,7 +82,7 @@
             </b-navbar-item>
               <b-navbar-item href="#">
                 头脑风暴
-            </b-navbar-item>     
+            </b-navbar-item>
             <b-navbar-dropdown label="项目详情">
                 <b-navbar-item href="/group-info/">
                     项目简介
@@ -95,15 +95,15 @@
             <b-navbar-item href="/class-info/">
                 班级详情
             </b-navbar-item>
-             <b-navbar-item href="https://www.yuque.com/groups/openxy/join?token=cfV5vv0O6pKOR0fE">
+             <b-navbar-item target="_blank" href="https://www.yuque.com/groups/openxy/join?token=cfV5vv0O6pKOR0fE">
                 班级语雀文档
             </b-navbar-item>
             </b-navbar-dropdown>
-            
-          
+
+
         </template>
 
-      
+
 
     </b-navbar>
   </div>
@@ -112,10 +112,10 @@
 
     <transition name="fade" appear>
       <main>
-        <slot />        
+        <slot />
       </main>
     </transition>
-    
+
     <footer class="footer" id="foo">
       <div class="content has-text-centered">
         <p>
