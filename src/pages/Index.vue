@@ -1,7 +1,7 @@
 <!--
  * @FilePath     : \test-site\src\pages\Index.vue
  * @Date         : 2020-05-31 14:22:32
- * @LastEditTime : 2020-06-16 21:26:46
+ * @LastEditTime : 2020-06-17 10:47:02
  * @Description  : 首页第三版，加入流展示与跳转项
 -->
 
@@ -82,7 +82,7 @@
 
 <page-query>
 query {
-posts: allFreshRssTest {
+posts: allFreshRssTest(sortBy: "data", order: ASC) {
         edges {
         node {
             id
