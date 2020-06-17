@@ -1,7 +1,7 @@
 <!--
- * @FilePath     : \test-site\src\pages\GroupInfo.vue
+ * @FilePath     : \test-site\src\pages\ProjectInfo.vue
  * @Date         : 2020-05-31 19:30:34
- * @LastEditTime : 2020-05-31 20:40:08
+ * @LastEditTime : 2020-06-17 17:17:51
  * @Description  : 小组详情界面
 --> 
 <template>
@@ -12,7 +12,7 @@
           <a href="/">首页</a>
         </li>
         <li class="is-active">
-          <a href="#" aria-current="page">小组详情</a>
+          <a href="#" aria-current="page">项目列表</a>
         </li>
       </ul>
     </nav>

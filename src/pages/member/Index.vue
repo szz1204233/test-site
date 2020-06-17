@@ -1,7 +1,7 @@
 <!--
  * @FilePath     : \test-site\src\pages\member\Index.vue
  * @Date         : 2020-05-31 20:43:03
- * @LastEditTime : 2020-06-16 20:51:12
+ * @LastEditTime : 2020-06-17 15:11:14
  * @Description  : 成员详情页面，包括所有成员的信息、简介及任务分工等
 -->
 <template>
@@ -16,7 +16,42 @@
         </li>
       </ul>
     </nav>
-    <b-table :data="data" :columns="columns"></b-table>
+    <!-- <b-table :data="data" :columns="columns"></b-table> -->
+
+    <b-table :data="data">
+      <template slot-scope="props">
+        <b-table-column field="studentID" label="学号" width="40" centered>
+          <span :style="props.row.studentID?'':'display:none'">{{ props.row.studentID }}</span>
+          <b-tag :style="props.row.studentID?'display:none':''" type>暂缺</b-tag>
+        </b-table-column>
+
+        <b-table-column field="name" label="姓名" centered>{{ props.row.name }}</b-table-column>
+
+        <b-table-column field="gender" label="性别" centered>{{ props.row.gender }}</b-table-column>
+
+        <b-table-column field="grade" label="年级" centered>
+          <span :style="props.row.grade?'':'display:none'">{{ props.row.grade }}</span>
+          <b-tag :style="props.row.grade?'display:none':''" type>暂缺</b-tag>
+        </b-table-column>
+
+        <b-table-column field="project" label="项目" centered>
+          <span :style="props.row.project?'':'display:none'">{{ props.row.project }}</span>
+          <b-tag :style="props.row.project?'display:none':''" type>暂缺</b-tag>
+        </b-table-column>
+
+        <b-table-column label="博客" centered>
+          <a :href="props.row.blog?props.row.blog:'#'" :target="props.row.blog?'_blank':''">
+            <span :style="props.row.blog?'':'display:none'">{{ props.row.blog }}</span>
+            <b-tag :style="props.row.blog?'display:none':''" type>暂缺</b-tag>
+          </a>
+        </b-table-column>
+
+        <b-table-column label="">
+          <g-link :to="'/member/'+props.row.studentID" :style="props.row.studentID?'':'display:none'">详情</g-link>
+        </b-table-column>
+      </template>
+    </b-table>
+
     <!-- <div v-for="(post, index) in $page.members.edges" :key="index">
       <article class="media">
         <figure class="media-left">
@@ -106,6 +141,7 @@ query {
                 gender
                 grade
                 project
+                blog
             }
         }
     }
@@ -114,7 +150,7 @@ query {
 
 <script>
 export default {
-  //created钩子用来在一个实例被创建之后执行代码
+  //created钩子用来在一个实例被创建之后执行代码，如果不是本地文件请使用mounted钩子
   created() {
     var queryData = [];
     var edges = this.$page.members.edges;
@@ -124,7 +160,8 @@ export default {
         name: edges[index].node.name,
         gender: edges[index].node.gender,
         grade: edges[index].node.grade,
-        project: edges[index].node.project
+        project: edges[index].node.project,
+        blog: edges[index].node.blog
       };
     }
     //在创建data后更改data内容
@@ -136,10 +173,11 @@ export default {
       data: [
         {
           studentID: 17051024,
-          name: "testName",
+          name: "测试姓名",
           gender: "null",
           grade: "创五",
-          project: "创新实践网站项目"
+          project: "创新实践网站项目",
+          blog: "博客地址"
         }
       ],
       columns: [
@@ -163,6 +201,10 @@ export default {
         {
           field: "project",
           label: "项目"
+        },
+        {
+          field: "blog",
+          label: "博客"
         }
       ]
     };
