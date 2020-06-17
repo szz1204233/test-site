@@ -1,7 +1,7 @@
 <!--
  * @FilePath     : \test-site\src\pages\Index.vue
  * @Date         : 2020-05-31 14:22:32
- * @LastEditTime : 2020-06-17 10:47:02
+ * @LastEditTime : 2020-06-17 17:17:22
  * @Description  : 首页第三版，加入流展示与跳转项
 -->
 
@@ -44,9 +44,18 @@
                   </div>
                 </div>
                 <footer class="card-footer">
-                  <a class="card-footer-item" :href="/per-page/">详情</a>
+                  <!-- <a class="card-footer-item" :href="/per-page/">详情</a> -->
+                  <a class="card-footer-item">
+                    <b-tooltip
+                      :label="post.node.pubDate"
+                      type="is-light"
+                      position="is-bottom"
+                      animated
+                      square
+                    >发布日期</b-tooltip>
+                  </a>
                   <a class="card-footer-item">评论</a>
-                  <a class="card-footer-item">分享</a>
+                  <a class="card-footer-item" :href="post.node.link" target="_blank">原文链接</a>
                 </footer>
               </b-collapse>
             </section>
@@ -55,7 +64,7 @@
       </div>
       <div class="column is-3">
         <article class="panel is-warning">
-          <p class="panel-heading">项目列表</p>
+          <p class="panel-heading"><a :href="/project-info/">项目列表</a></p>
           <a class="panel-block is-active">星星优品</a>
           <a class="panel-block">微信小程序</a>
           <a class="panel-block">创新实践门户网站</a>
@@ -69,11 +78,12 @@
           <a class="panel-block">问题4</a>
         </article>
         <article class="panel is-info">
-          <p class="panel-heading"><a :href="/member/">成员列表</a></p>
-          <a class="panel-block is-active">xxxx1</a>
-          <a class="panel-block">xxxxx2</a>
-          <a class="panel-block">xxxxxx3</a>
-          <a class="panel-block">xxxxxx4</a>
+          <p class="panel-heading">
+            <a :href="/member/">成员列表</a>
+          </p>
+          <div class="panel-block" v-for="(member, index) in $page.members.edges" :key="index">
+            <span>{{member.node.name}}</span>
+          </div>
         </article>
       </div>
     </div>
@@ -82,20 +92,29 @@
 
 <page-query>
 query {
-posts: allFreshRssTest(sortBy: "data", order: ASC) {
-        edges {
-        node {
-            id
-            title
-            pubDate
-            content
-            creator
-        }
-        previous {
-            id
-        }
-        }
+  posts: allFreshRss(sortBy: "date", order: ASC) {
+    edges {
+      node {
+          id
+          title
+          pubDate
+          content
+          creator
+          link
+      }
+      previous {
+          id
+      }
     }
+  }
+  members: allMembersInfo {
+    edges {
+      node {
+        studentID
+        name
+      }
+    }
+  }
 }
 </page-query>
 

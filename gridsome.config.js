@@ -22,7 +22,7 @@ module.exports = {
     {
       use: "gridsome-source-rss",
       options: {
-        feedUrl: "http://101.132.159.246/rss/p/i/?a=rss&get=c_3&state=3&user=TechRSS&token=rss&hours=168",
+        feedUrl: "http://101.132.159.246/rss/p/i/?a=rss&get=c_3&state=3&user=TechRSS&token=rss&hours=1680",
         typeName: "fresh_rss",
         // Parser options, see: https://www.npmjs.com/package/rss-parser
         parser: {}

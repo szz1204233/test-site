@@ -84,11 +84,11 @@
                 头脑风暴
             </b-navbar-item>
             <b-navbar-dropdown label="项目详情">
-                <b-navbar-item href="/group-info/">
-                    项目简介
+                <b-navbar-item href="/project-info/">
+                    项目列表
                 </b-navbar-item>
                 <b-navbar-item href="#">
-                    项目进度管理
+                    进度管理
                 </b-navbar-item>
             </b-navbar-dropdown>
              <b-navbar-dropdown label="关于">
@@ -96,7 +96,7 @@
                 班级详情
             </b-navbar-item>
              <b-navbar-item target="_blank" href="https://www.yuque.com/groups/openxy/join?token=cfV5vv0O6pKOR0fE">
-                班级语雀文档
+                语雀文档
             </b-navbar-item>
             </b-navbar-dropdown>
 
@@ -119,7 +119,7 @@
     <footer class="footer" id="foo">
       <div class="content has-text-centered">
         <p>
-          使用<a href="https://gridsome.org">gridsome</a>框架，样式为<a href="https://buefy.org">buefy</a>
+          使用<a href="https://gridsome.org" target="_blank">gridsome</a>框架，样式为<a href="https://buefy.org" target="_blank">buefy</a>
           <br />
           源码遵循<a href="http://opensource.org/licenses/mit-license.php">MIT协议</a>
           <br />
