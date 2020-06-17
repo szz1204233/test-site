@@ -6,6 +6,7 @@ import DefaultLayout from '~/layouts/Default.vue'
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
 import 'vue-material-design-icons/styles.css'
+import './fix.css'
 
 
 export default function (Vue, { router, head, isClient }) {
