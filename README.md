@@ -1,19 +1,16 @@
-# Default starter for Gridsome
+# 班级门户示例 帮助文档
 
-This is the project you get when you run `gridsome create new-project`.
+[![](https://img.shields.io/badge/project-v1.0.0-green.svg)](https://github.com/szz1204233/gridsome-test-site)
+[![](https://img.shields.io/badge/readme-v0.1.0-blue.svg)](https://github.com/szz1204233/gridsome-test-site/blob/master/README.md)
 
-### 1. Install Gridsome CLI tool if you don't have
+## 目录
 
-`npm install --global @gridsome/cli`
+- 简介
+- 网站功能
+- 整体架构
+- 开发及使用注意事项
+- 参考文档及开源仓库
 
-<<<<<<< Updated upstream
-### 2. Create a Gridsome project
-
-1. `gridsome create my-gridsome-site` to install default starter
-2. `cd my-gridsome-site` to open the folder
-3. `gridsome develop` to start a local dev server at `http://localhost:8080`
-4. Happy coding 🎉🙌
-=======
 ## 简介
 
 本项目为一个针对班级展示需求而设计的示例网站，主要用于展示项目小组的进度、成果和文档。
@@ -90,4 +87,3 @@ This is the project you get when you run `gridsome create new-project`.
 
 * [GitHub 仓库](https://github.com/szz1204233/gridsome-test-site)
 * [gitee 仓库（备用）](https://gitee.com/szz1204/gridsome-test-site-gitee)
->>>>>>> Stashed changes
